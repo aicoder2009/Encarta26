@@ -1,4 +1,4 @@
-import type { WikipediaSummary, WikipediaSearchResponse, WikipediaFeaturedContent } from '@/types/wikipedia';
+import type { WikipediaSummary, WikipediaSearchResponse, WikipediaFeaturedContent, WikipediaSectionsResponse } from '@/types/wikipedia';
 
 const WIKIPEDIA_API_BASE = 'https://en.wikipedia.org/api/rest_v1';
 const WIKIPEDIA_ACTION_API = 'https://en.wikipedia.org/w/api.php';
@@ -57,7 +57,7 @@ export async function getDailyFeatured(): Promise<WikipediaFeaturedContent> {
   return response.json();
 }
 
-export async function getArticleSections(title: string): Promise<unknown> {
+export async function getArticleSections(title: string): Promise<WikipediaSectionsResponse> {
   const params = new URLSearchParams({
     action: 'parse',
     page: title,

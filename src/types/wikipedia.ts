@@ -80,6 +80,25 @@ export interface WikipediaFeaturedContent {
   }>;
 }
 
+export interface WikipediaSection {
+  toclevel: number;
+  level: string;
+  line: string;
+  number: string;
+  index: string;
+  fromtitle: string;
+  byteoffset: number;
+  anchor: string;
+}
+
+export interface WikipediaSectionsResponse {
+  parse: {
+    title: string;
+    pageid: number;
+    sections: WikipediaSection[];
+  };
+}
+
 export interface Category {
   id: string;
   name: string;
