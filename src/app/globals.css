@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-encarta-navy: #0a1628;
+  --color-encarta-panel: #0d2240;
+  --color-encarta-accent: #1a6eb5;
+  --color-encarta-gold: #c8a84b;
+  --color-encarta-text: #a8c8e8;
+  --color-encarta-dim: #4a6a8a;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --encarta-navy: #0a1628;
+  --encarta-panel: #0d2240;
+  --encarta-accent: #1a6eb5;
+  --encarta-gold: #c8a84b;
+  --encarta-text: #a8c8e8;
+  --encarta-text-dim: #4a6a8a;
+  --encarta-border-light: #2a4a6a;
+  --encarta-border-dark: #040c18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--encarta-navy);
+  color: var(--encarta-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encarta-style raised panel (Windows 95 beveled look) */
+.encarta-panel {
+  background-color: var(--encarta-panel);
+  border: 2px solid;
+  border-color: var(--encarta-border-light) var(--encarta-border-dark) var(--encarta-border-dark) var(--encarta-border-light);
+  box-shadow: 
+    inset 1px 1px 0px rgba(255,255,255,0.08),
+    inset -1px -1px 0px rgba(0,0,0,0.4),
+    2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Inset/sunken panel */
+.encarta-inset {
+  border: 2px solid;
+  border-color: var(--encarta-border-dark) var(--encarta-border-light) var(--encarta-border-light) var(--encarta-border-dark);
+  box-shadow: 
+    inset 1px 1px 3px rgba(0,0,0,0.6),
+    inset -1px -1px 0px rgba(255,255,255,0.05);
+}
+
+/* Encarta button style */
+.encarta-button {
+  border: 1px solid;
+  border-color: var(--encarta-border-light) var(--encarta-border-dark) var(--encarta-border-dark) var(--encarta-border-light);
+  box-shadow: 
+    inset 1px 1px 0px rgba(255,255,255,0.1),
+    1px 1px 2px rgba(0,0,0,0.4);
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+}
+
+.encarta-button:active {
+  border-color: var(--encarta-border-dark) var(--encarta-border-light) var(--encarta-border-light) var(--encarta-border-dark);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Heading style */
+.encarta-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Title bar gradient */
+.encarta-titlebar {
+  background: linear-gradient(180deg, #1e4a8a 0%, #0a2a5a 40%, #061828 100%);
+  border-bottom: 2px solid var(--encarta-border-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6), inset 0 1px 0px rgba(255,255,255,0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--encarta-panel);
+  border: 1px solid var(--encarta-border-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a3a5c;
+  border: 1px solid;
+  border-color: var(--encarta-border-light) var(--encarta-border-dark) var(--encarta-border-dark) var(--encarta-border-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a6eb5;
+}
+
+/* Article content styling */
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  font-family: Georgia, serif;
+  color: #c8a84b;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #c8d8e8;
+}
+
+/* Gold divider line */
+.encarta-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--encarta-gold), transparent);
+  margin: 1rem 0;
+}
